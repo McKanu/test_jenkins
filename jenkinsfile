@@ -7,8 +7,11 @@ pipeline {
   stages {
     stage('init') {
       steps {
-        sh 'terraform init'
+        ansiColor('xterm') {
+            sh 'terraform init'
+        }
       }
+    }
     }
     stage('plan') {
       steps {
@@ -17,11 +20,7 @@ pipeline {
     }
     stage('apply') {
       steps {
-<<<<<<< HEAD
         sh 'terraform apply -auto-approve'
-=======
-        sh 'terraform apply -autp-approve'        
->>>>>>> 1e7e3cf26fbe98f81388f935a18661af349619d9
       }
     }
   }
