@@ -1,0 +1,14 @@
+//Jenkinsfile
+//Run terraform init
+stage('init'){
+    ansiColor('xterm') {
+        sh 'terraform init'
+    }
+}
+
+//Run terraform plan
+stage('init'){
+    ansiColor('xterm') {
+        sh 'terraform plan'
+    }
+}
