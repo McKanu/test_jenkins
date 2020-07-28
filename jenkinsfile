@@ -1,14 +1,24 @@
-//Jenkinsfile
-//Run terraform init
-stage('init'){
-    ansiColor('xterm') {
+pipeline {
+  agent {
+    node {
+      label 'master'
+    }
+  }
+  stages {
+    stage('init') {
+      steps {
         sh 'terraform init'
+      }
     }
-}
-
-//Run terraform plan
-stage('init'){
-    ansiColor('xterm') {
+    stage('plan') {
+      steps {
         sh 'terraform plan'
+      }
     }
+    stage('apply') {
+      steps {
+        sh 'terraform apply -auto-approve'
+      }
+    }
+  }
 }
