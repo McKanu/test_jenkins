@@ -7,21 +7,21 @@ pipeline {
     stage('init') {
       steps {
         ansiColor('xterm') {
-            sh 'terraform init'
+            sh 'terraform init -input=false'
         }
       }
     }
     stage('plan') {
       steps {
         ansiColor('xterm') {
-          sh 'terraform plan'
+          sh 'terraform plan -input=false'
         }
       }
     }
     stage('apply') {
       steps {
         ansiColor('xterm') {
-          sh 'terraform apply -auto-approve'
+          sh 'terraform apply -input=false -auto-approve'
         }
       }
     }
