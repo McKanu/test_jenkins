@@ -18,7 +18,7 @@ pipeline {
         }
       }
     }
-    stage('plan') {
+    stage('apply') {
       steps {
         ansiColor('xterm') {
           sh './terraform apply -auto-approve'
