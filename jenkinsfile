@@ -14,14 +14,14 @@ pipeline {
     stage('plan') {
       steps {
         ansiColor('xterm') {
-          sh 'terraform plan'
+          sh './terraform plan'
         }
       }
     }
     stage('plan') {
       steps {
         ansiColor('xterm') {
-          sh 'terraform apply -auto-approve=true'
+          sh './terraform apply -auto-approve'
         }
       }
     }
