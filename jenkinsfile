@@ -21,7 +21,7 @@ pipeline {
     stage('plan') {
       steps {
         ansiColor('xterm') {
-          sh 'terraform apply -input= false -auto-approve'
+          sh 'terraform apply -input=false -auto-approve'
         }
       }
     }
